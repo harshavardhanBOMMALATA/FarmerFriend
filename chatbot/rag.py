@@ -1,30 +1,44 @@
 import chromadb
+import os
+
+from pathlib import Path
 
 from groq import Groq
-import os
 
 from sentence_transformers import (
     SentenceTransformer
 )
 
-model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+model = None
+
 
 client = chromadb.PersistentClient(
-    path="chroma_db"
+    path=str(BASE_DIR / "chroma_db")
 )
 
 collection = client.get_collection(
     "paddy_knowledge"
 )
 
+
 groq_client = Groq(
-    api_key="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"
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 
 def ask_paddy_bot(question, history):
+
+    global model
+
+    if model is None:
+
+        model = SentenceTransformer(
+            "all-MiniLM-L6-v2"
+        )
 
     conversation = ""
 
@@ -53,7 +67,9 @@ Assistant: {item['answer']}
     documents = results["documents"][0]
     distances = results["distances"][0]
 
-    context = "\n".join(documents)
+    context = "\n".join(
+        documents
+    )
 
     use_kb = False
 
@@ -62,6 +78,7 @@ Assistant: {item['answer']}
         best_distance = distances[0]
 
         if best_distance < 1.0:
+
             use_kb = True
 
     if use_kb:
