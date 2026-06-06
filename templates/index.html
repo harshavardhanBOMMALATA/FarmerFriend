@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmerFriend</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-icon">🌱</div>
+
+            <div>
+                <h1>Farmer<span>Friend</span></h1>
+                <p>AI Powered Smart Farming Assistant</p>
+            </div>
+
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+        </ul>
+
+    </nav>
+
+    <section class="hero">
+
+        <h2>Helping Farmers Make Smarter Decisions</h2>
+
+        <p>
+            Get intelligent crop recommendations and AI-powered agriculture
+            news summaries to make informed farming decisions.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🌾</div>
+
+                <h3>Crop Recommendation</h3>
+
+                <p>
+                    Get the best crop suggestion based on soil nutrients,
+                    temperature, humidity, pH and rainfall conditions using
+                    Machine Learning.
+                </p>
+
+                <button class="btn crop-btn" onclick="cropPrediction()">
+                    Try Crop Prediction →
+                </button>
+
+            </div>
+
+            <div class="or">
+                OR
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📰</div>
+
+                <h3>Paddy Bot</h3>
+
+                <p>
+                   Ask questions about paddy cultivation and receive AI-powered
+                   guidance on diseases, fertilizers, irrigation, pest management,
+                   and best farming practices based on agricultural knowledge.
+                </p>
+
+                <button class="btn news-btn" onclick="chatbot()">
+                    Try Paddy Bot →
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="choose">
+            🌱 Choose a service to get started
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h3>🌱 FarmerFriend</h3>
+            <p>
+                FarmerFriend combines Machine Learning and Generative AI
+                to help farmers make smarter crop and information decisions.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/recommendation/">Crop Recommendation</a></li>
+                <li><a href="/chatbot/index/">Paddy Bot</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Features</h3>
+            <p>🌾 Crop Prediction</p>
+            <p>📰 News Summarization</p>
+            <p>🤖 AI Powered</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>📧
+                <a href="mailto:hbommalata@gmail.com">
+                    hbommalata@gmail.com
+                </a>
+            </p>
+            <p>📍 India</p>
+
+            <div class="socials">
+
+    <a href="https://leetcode.com/u/red_shadow_630/" target="_blank">
+        📘
+    </a>
+
+    <a href="https://www.instagram.com/always_harsha_royal/?hl=en" target="_blank">
+        📸
+    </a>
+
+    <a href="https://www.linkedin.com/in/harshavardhan-bommalata-7bb9442b0/" target="_blank">
+        💼
+    </a>
+
+</div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 FarmerFriend. All Rights Reserved.
+    </div>
+
+</footer>
+
+<script src="{% static 'scripts/index.js' %}"></script>
+
+</body>
+</html>

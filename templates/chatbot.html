@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paddy AI Assistant</title>
+
+    <link rel="stylesheet" href="{% static 'styles/chatbot.css' %}">
+</head>
+<body>
+
+    <div class="chat-container">
+
+        <div class="header">
+            <div class="logo">🌾</div>
+
+            <h1>Paddy AI Assistant</h1>
+
+            <p>
+                Ask anything about paddy farming, diseases,
+                fertilizers, irrigation, pest management,
+                and yield improvement.
+            </p>
+        </div>
+
+        <div class="suggestions">
+            <button>🌱 Best fertilizer for paddy</button>
+            <button>🦠 Symptoms of rice blast disease</button>
+            <button>💧 Irrigation schedule for rice</button>
+            <button>📈 How to increase paddy yield</button>
+        </div>
+
+        <div class="messages" id="messages">
+
+            <div class="bot-message">
+                👋 Welcome! I'm your Paddy AI Assistant.
+                Ask me anything about paddy cultivation.
+            </div>
+
+        </div>
+
+        <form class="chat-form" id="chatForm">
+
+            <input
+                type="text"
+                id="question"
+                placeholder="Type your question here..."
+                required
+            >
+
+            <button type="submit">
+                ➤
+            </button>
+
+        </form>
+
+        <div class="footer-note">
+            Paddy AI can make mistakes. Verify important farming decisions with agricultural experts or local extension officers.
+        </div>
+
+    </div>
+
+    <script src="{% static 'scripts/chatbot.js' %}"></script>
+
+</body>
+</html>
